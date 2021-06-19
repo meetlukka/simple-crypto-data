@@ -1,0 +1,74 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+.main-container{
+    margin: auto;
+    width: 50%;
+    padding: 6rem;
+}
+.list-button{
+    
+    justify-content: center;
+    left: 50%;
+    top: 20%;
+    
+}
+.main-list-btn{
+    color: blue !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: white;
+	padding: 20px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+    margin-right: 1rem;
+    font-weight: bolder;
+    white-space: nowrap;
+}
+.main-list-btn:hover{
+    
+	letter-spacing: 1px;
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+.main-list-container{
+
+    width:50%;
+    margin: auto;
+    padding: 1rem;
+}
+.individual-list-item{
+    background-color: white;
+    margin: 1rem;
+    border-radius:0.4rem ;
+    
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+div.list-container{
+    padding: 1rem;
+    border-radius: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  div.hidden-container{
+    display:none;
+    
+  }
+ .heart-icon{
+     text-decoration: none;
+     color:pink;
+     font-size: 2rem;
+     margin-top:0.7rem;
+ }
+ .item-name{
+     font-size: 1.4rem;
+ }
+ .additional-info{
+     font-size: 1.4rem;
+ }
