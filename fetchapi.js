@@ -93,6 +93,7 @@ for(var item = 0;item<dataLength;item++){
     heartElement.href = "#"
     
     heartElement.className = "heart-icon";
+    heartElement.classList.add("not-favorite");
     hiddenDivElement.className = "hidden-container";
     marketCapElement.innerText = `MarketCap: ${itemMarketCap[item]}`;
     marketCapElement.className = "additional-info"
@@ -122,4 +123,10 @@ $('.list-container').click(function() {
   $('.hidden-container').not($(this).next()).hide();
   $(this).next('.hidden-container').toggle(50);
 });
+ }
+
+ for(var favItem = 0;favItem<dataLength;favItem++){
+    document.querySelectorAll(".heart-icon")[favItem].addEventListener("click",function(e){
+        
+    })
  }
