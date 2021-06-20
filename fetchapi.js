@@ -134,7 +134,7 @@ $('.list-container').click(function(e) {
     }
 });
 for(var favItem = 0;favItem<dataLength;favItem++){
-    console.log("this for executes")
+    
     document.querySelectorAll(".heart-icon")[favItem].addEventListener("click",function(e){
         var targetElement = e.target;
         console.log(targetElement)
@@ -157,6 +157,7 @@ for(var favItem = 0;favItem<dataLength;favItem++){
  }
 
     function executeFavItemList(){
+        document.querySelectorAll(".fav-item-list")[0].innerHTML = "";
         favoriteItemIdArray = [...new Set(favoriteItemIdArray)];
         // console.log("here here",favoriteItemIdArray)
         var favItemsLength = favoriteItemIdArray.length;
@@ -208,6 +209,7 @@ for(var favItem = 0;favItem<dataLength;favItem++){
     imgElement.src = `${favoriteItemIamgeURL[item]}`
     heartElement.innerText = "❤"
     heartElement.href = "#"
+    heartElement.style.color="red"
     heartElement.id = `${favoriteItemIdArray[item]}`
     
     heartElement.className = "heart-icon";
@@ -238,16 +240,46 @@ for(var favItem = 0;favItem<dataLength;favItem++){
 
             }
         }
+            
+        $('.list-container').click(function(e) {
+    if(e.target.classList.contains("heart-icon")){}
+    else{
+  $('.hidden-container').not($(this).next()).hide();
+  $(this).next('.hidden-container').toggle(50);
+    }
+});
+for(var i = 0 ; i<favItemsLength;i++){
+    console.log("id of item",favoriteItemIdArray[i])
+    document.querySelectorAll(".fav-item-list .heart-icon")[i].addEventListener("click",function(e){
+        
+            var targetElement = e.target;
+            var thisElement = e.target.closest(".individual-list-item");
+            thisElement.remove();
+            console.log("id of item",favoriteItemIdArray[i])
+            document.getElementById(e.target.id).classList.remove("favorite")
+            document.getElementById(e.target.id).classList.add("not-favorite")
+            document.getElementById(e.target.id).style.color="pink"
+            var indexOfItem = favoriteItemIdArray.indexOf(targetElement.id);
+            if (indexOfItem > -1) {
+                favoriteItemIdArray.splice(indexOfItem, 1);
+            }
+            
+            
+
+    })
+}
+
     }
 
  document.querySelector(".list-button").addEventListener("click",function(e){
      if(e.target.classList.contains("favItems")){
          document.querySelectorAll(".all-item-list")[0].style.display="none"
+         document.querySelectorAll(".fav-item-list")[0].style.display="block"
          executeFavItemList();
 
      }
      else if(e.target.classList.contains("allItems")){
-         
+         document.querySelectorAll(".fav-item-list")[0].style.display="none"
           document.querySelectorAll(".all-item-list")[0].style.display="block"
      }
 })

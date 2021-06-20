@@ -58,6 +58,7 @@ div.list-container{
   }
   div.hidden-container{
     display:none;
+    padding:1rem;
     
   }
  .heart-icon{
